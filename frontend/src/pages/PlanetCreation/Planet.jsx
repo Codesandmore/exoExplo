@@ -23,7 +23,7 @@ const Planet = ({
 
     const textureLoader = new THREE.TextureLoader();
     const crustTexture = texture ? textureLoader.load(texture) : textureLoader.load('https://i.imgur.com/d6G5zXn.jpg');
-    const coreTexture = textureLoader.load('https://i.imgur.com/jR1X8pt.jpg'); 
+    const coreTexture = textureLoader.load('https://i.imgur.com/jR1X8pt.jpg');
 
     const coreGeometry = new THREE.SphereGeometry(coreSize * 0.2, 32, 32);
     const coreMaterial = new THREE.MeshBasicMaterial({ map: coreTexture, color: coreColor });
@@ -35,27 +35,23 @@ const Planet = ({
     const crust = new THREE.Mesh(crustGeometry, crustMaterial);
     scene.add(crust);
 
-    if (vegetationCoverage > 0) {
-      const vegetationGeometry = new THREE.SphereGeometry(coreSize * 0.2 + 0.11, 32, 32);
-      const vegetationMaterial = new THREE.MeshBasicMaterial({
-        color: 0x00ff00,
-        transparent: true,
-        opacity: vegetationCoverage * 0.5, // Subtle tint
-      });
-      const vegetation = new THREE.Mesh(vegetationGeometry, vegetationMaterial);
-      scene.add(vegetation);
-    }
+    const vegetationGeometry = new THREE.SphereGeometry(coreSize * 0.2 + 0.11, 32, 32);
+    const vegetationMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00ff00,
+      transparent: true,
+      opacity: vegetationCoverage * 0.5,
+    });
+    const vegetation = new THREE.Mesh(vegetationGeometry, vegetationMaterial);
+    scene.add(vegetation);
 
-    if (waterPresence > 0) {
-      const waterGeometry = new THREE.SphereGeometry(coreSize * 0.2 + 0.12, 32, 32);
-      const waterMaterial = new THREE.MeshBasicMaterial({
-        color: 0x0000ff,
-        transparent: true,
-        opacity: waterPresence * 0.5, // Subtle tint
-      });
-      const water = new THREE.Mesh(waterGeometry, waterMaterial);
-      scene.add(water);
-    }
+    const waterGeometry = new THREE.SphereGeometry(coreSize * 0.2 + 0.12, 32, 32);
+    const waterMaterial = new THREE.MeshBasicMaterial({
+      color: 0x0000ff,
+      transparent: true,
+      opacity: waterPresence * 0.5,
+    });
+    const water = new THREE.Mesh(waterGeometry, waterMaterial);
+    scene.add(water);
 
     if (ringThickness > 0) {
       const ringGeometry = new THREE.RingGeometry(coreSize * 0.3, coreSize * 0.3 + ringThickness, 32);
