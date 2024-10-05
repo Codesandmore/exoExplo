@@ -1,13 +1,15 @@
-// src/App.js
-import React from 'react';
-import PlanetLayerApp from './pages//PlanetCreation/PlanetLayerApp';
+import './App.css'
+import { Route,Routes } from 'react-router-dom'
+import Home from './components/Home.jsx'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PlanetLayerApp />
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+      </Routes>
+    </>
+  )
 }
 
 export default App;
