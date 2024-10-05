@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#exo-wiki {
+    @apply h-screen bg-cover bg-center;
+    background-image: url('./assets/wiki.jpg');
+}
+
+#story-board {
+    @apply h-screen bg-cover bg-center;
+    background-image: url('./assets/spacebg1.jpg');
+}
+
+#games{
+    @apply h-screen bg-cover bg-center;
+    background-image: url('./assets/spacebg3.jpg');
+}
+
+#planet-travel {
+    @apply h-screen bg-cover bg-center;
+    background-image: url('./assets/spacebg4.jpg');
+}
+
+#create-planet {
+    @apply h-screen bg-cover bg-center;
+    background-image: url('./assets/spacebg2.jpg');
+}
