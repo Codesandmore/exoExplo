@@ -21,7 +21,7 @@ const Footer = () => {
 
                 </div>
                 <div className="flex flex-col gap-2">
-                    <div className="font-bold uppercase text-[#9ca3af] pb-3">Legal</div> <a href="#xxx" className="hover:underline">Imprint</a>  <a href="#xxx" className="hover:underline">Privacy Policy</a>  <a href="#xxx" className="hover:underline">Terms of Use</a>
+                    <div className="font-bold uppercase text-[#9ca3af] pb-3">Legal</div> <a href="#xxx" className="hover:underline">Copyright</a>  <a href="#xxx" className="hover:underline">Privacy Policy</a>  <a href="#xxx" className="hover:underline">Terms of Use</a>
 
                 </div>
             </div>
