@@ -3,7 +3,6 @@ import { Route,Routes } from 'react-router-dom'
 import Home from './components/Home.jsx'
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -13,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
