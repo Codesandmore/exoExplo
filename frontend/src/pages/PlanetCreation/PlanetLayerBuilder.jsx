@@ -16,7 +16,6 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
       coreSize,
       crustColor,
       coreColor,
-      mantleColor,
       vegetationCoverage,
       waterPresence,
       ringThickness,
@@ -75,8 +74,8 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         <input
           type="range"
           min="1"
-          max="10" // Increased maximum size for more intervals
-          step="0.1" // Smaller step for finer control
+          max="10"
+          step="0.1"
           value={coreSize}
           onChange={(e) => setCoreSize(parseFloat(e.target.value))}
           className="w-full"
@@ -133,36 +132,14 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         />
       </div>
 
-      {/* Upload Texture */}
-      <div className="w-full">
-        <label className="block">Upload Texture:</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleTextureChange}
-          className="w-full"
-        />
-      </div>
-
-      {/* Upload Background Image */}
-      <div className="w-full">
-        <label className="block">Upload Background Image:</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleBackgroundChange}
-          className="w-full"
-        />
-      </div>
-
       {/* Ring Thickness */}
       <div className="w-full">
         <label className="block">Ring Thickness:</label>
         <input
           type="range"
           min="0"
-          max="2"
-          step="0.1"
+          max="1"
+          step="0.01"
           value={ringThickness}
           onChange={(e) => setRingThickness(parseFloat(e.target.value))}
           className="w-full"
@@ -180,26 +157,32 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         />
       </div>
 
-      <div className="flex space-x-2">
-        <button
-          onClick={handleUpdate}
-          className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600"
-        >
-          Update
-        </button>
-        <button
-          onClick={handleDownload}
-          className="bg-green-500 text-white rounded px-4 py-2 hover:bg-green-600"
-        >
-          Download
-        </button>
-        <button
-          onClick={handleShare}
-          className="bg-yellow-500 text-white rounded px-4 py-2 hover:bg-yellow-600"
-        >
-          Share Planet
-        </button>
+      {/* Texture Upload */}
+      <div className="w-full">
+        <label className="block">Upload Texture:</label>
+        <input type="file" accept="image/*" onChange={handleTextureChange} />
       </div>
+
+      {/* Background Image Upload */}
+      <div className="w-full">
+        <label className="block">Upload Background Image:</label>
+        <input type="file" accept="image/*" onChange={handleBackgroundChange} />
+      </div>
+
+      {/* Update Button */}
+      <button onClick={handleUpdate} className="bg-blue-500 text-white rounded px-4 py-2">
+        Update Planet
+      </button>
+
+      {/* Download Button */}
+      <button onClick={handleDownload} className="bg-green-500 text-white rounded px-4 py-2">
+        Download Planet
+      </button>
+
+      {/* Share Button */}
+      <button onClick={handleShare} className="bg-yellow-500 text-white rounded px-4 py-2">
+        Share Planet
+      </button>
     </div>
   );
 };
