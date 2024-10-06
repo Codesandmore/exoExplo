@@ -2,7 +2,7 @@ import './App.css'
 import { Route,Routes } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import MemoryCardGame from './pages/Games/MemoryCardGame.jsx';
-import Quiz from './pages/Games/quiz.jsx';
+import Quiz from './pages/Games/Quiz.jsx';
 import StoryBoard from './pages/StoryBoard/Story.jsx'; 
 import PlanetLayerApp from './pages/PlanetCreation/PlanetLayerApp.jsx';
 import PlanetTravel from './pages/ExoExplorer/ExoExplorer.jsx';
