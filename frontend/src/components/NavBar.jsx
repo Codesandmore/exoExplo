@@ -14,7 +14,8 @@ const Navbar = () => {
               <Link to="/wiki" className="text-white hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">ExoWiki</Link>
               <Link to="/story" className="text-white hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Storyboard</Link>
               <Link to="/create" className="text-white hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Create</Link>
-              <Link to="/games" className="text-white hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Games</Link>
+              <Link to="/memory" className="text-white hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Memoryard</Link>
+              <Link to="/quiz" className="text-white hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Quiz</Link>
             </div>
           </div>
         </div>
