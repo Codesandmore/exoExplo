@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ExoWiki = ({ x = '50%', y = '25%' }) => {
   return (
@@ -6,6 +7,7 @@ const ExoWiki = ({ x = '50%', y = '25%' }) => {
       id="exo-wiki"
       className="relative h-screen flex items-center justify-center"
     >
+      <Link to='/wiki'>
       <button className="px-6 py-3 bg-white text-black font-semibold rounded-full flex items-center hover:bg-gray-200 transition duration-300 absolute"
               style={{
                 left: x, // X-coordinate
@@ -14,6 +16,7 @@ const ExoWiki = ({ x = '50%', y = '25%' }) => {
               }}>
             Learn <span className="ml-2">→</span>
       </button>
+      </Link>
     </div>
   );
 };

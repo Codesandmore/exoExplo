@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Lander = () => {
   return (
@@ -15,6 +16,11 @@ const Lander = () => {
           There are many methods of detecting exoplanets: Transit photometry and Doppler spectroscopy have found the most, but these methods suffer from clear observational bias favoring the detection of planets near the star; thus, 85% of the exoplanets detected are inside the tidal locking zone. The least massive known exoplanet is Draugr (also called PSR B1257+12 A or PSR B1257+12 b), which is about twice the mass of the Moon. On the other end of the scale, the most massive exoplanet listed on the NASA Exoplanet Archive is HR 2562 b, which is around 30 times the mass of Jupiter. However, because of its size, some scientists consider HR 2562 b too large to be a planet and think it might actually be a brown dwarf instead.
         </p>
       </div>
+      <Link to="/wiki2">
+        <button className="px-6 py-3 bg-white text-black font-semibold rounded-full flex items-center hover:bg-gray-200 transition duration-300" style={buttonStyle}>
+          Learn <span className="ml-2">→</span>
+        </button>
+      </Link>
     </div>
   );
 };
@@ -31,6 +37,7 @@ const containerStyle = {
   alignItems: 'center',
   padding: '2rem',
   color: 'white',
+  position: 'relative', // Make the container a relative parent for absolute positioning
 };
 
 const headingStyle = {
@@ -56,6 +63,20 @@ const textStyle = {
   fontSize: '1.1rem',
   lineHeight: '1.6',
   marginBottom: '1.5rem',
+};
+
+const buttonStyle = {
+  position: 'absolute',
+  top: '1rem', // Positioning the button from the top
+  right: '1rem', // Positioning the button from the right
+  backgroundColor: '#ffffff',
+  color: '#000000',
+  padding: '0.75rem 2rem',
+  border: 'none',
+  borderRadius: '30px',
+  fontSize: '1rem',
+  cursor: 'pointer',
+  zIndex: 10, // Ensures the button stays on top
 };
 
 export default Lander;
