@@ -47,29 +47,11 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
     }
   };
 
-  const handleDownload = () => {
-    const canvas = document.querySelector('canvas');
-    if (canvas) {
-      canvas.toBlob((blob) => {
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'planet.png';
-        link.click();
-      });
-    }
-  };
-
-  const handleShare = () => {
-    const shareUrl = window.location.href;
-    alert(`Share this URL: ${shareUrl}`);
-  };
-
   return (
-    <div className="flex flex-col items-center bg-white rounded-lg shadow-lg p-5 space-y-4">
-      <h2 className="text-xl font-bold">Build Your Planet</h2>
+    <div className="bg-gray-100 p-6 rounded-lg shadow-lg space-y-4 w-full max-w-md">
+      <h2 className="text-2xl font-semibold text-center">Build Your Planet</h2>
 
-      {/* Core Size */}
-      <div className="w-full">
+      <div>
         <label className="block">Core Size:</label>
         <input
           type="range"
@@ -82,30 +64,27 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         />
       </div>
 
-      {/* Crust Color */}
-      <div className="w-full">
+      <div>
         <label className="block">Crust Color:</label>
         <input
           type="color"
           value={crustColor}
           onChange={(e) => setCrustColor(e.target.value)}
-          className="p-0 w-full"
+          className="w-full"
         />
       </div>
 
-      {/* Core Color */}
-      <div className="w-full">
+      <div>
         <label className="block">Core Color:</label>
         <input
           type="color"
           value={coreColor}
           onChange={(e) => setCoreColor(e.target.value)}
-          className="p-0 w-full"
+          className="w-full"
         />
       </div>
 
-      {/* Vegetation Coverage */}
-      <div className="w-full">
+      <div>
         <label className="block">Vegetation Coverage (0 - 1):</label>
         <input
           type="number"
@@ -118,8 +97,7 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         />
       </div>
 
-      {/* Water Presence */}
-      <div className="w-full">
+      <div>
         <label className="block">Water Presence (0 - 1):</label>
         <input
           type="number"
@@ -132,8 +110,7 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         />
       </div>
 
-      {/* Ring Thickness */}
-      <div className="w-full">
+      <div>
         <label className="block">Ring Thickness:</label>
         <input
           type="range"
@@ -146,42 +123,28 @@ const PlanetLayerBuilder = ({ onLayerUpdate }) => {
         />
       </div>
 
-      {/* Ring Color */}
-      <div className="w-full">
+      <div>
         <label className="block">Ring Color:</label>
         <input
           type="color"
           value={ringColor}
           onChange={(e) => setRingColor(e.target.value)}
-          className="p-0 w-full"
+          className="w-full"
         />
       </div>
 
-      {/* Texture Upload */}
-      <div className="w-full">
+      <div>
         <label className="block">Upload Texture:</label>
         <input type="file" accept="image/*" onChange={handleTextureChange} />
       </div>
 
-      {/* Background Image Upload */}
-      <div className="w-full">
+      <div>
         <label className="block">Upload Background Image:</label>
         <input type="file" accept="image/*" onChange={handleBackgroundChange} />
       </div>
 
-      {/* Update Button */}
-      <button onClick={handleUpdate} className="bg-blue-500 text-white rounded px-4 py-2">
+      <button onClick={handleUpdate} className="bg-blue-600 text-white py-2 px-4 rounded shadow hover:bg-blue-700 w-full">
         Update Planet
-      </button>
-
-      {/* Download Button */}
-      <button onClick={handleDownload} className="bg-green-500 text-white rounded px-4 py-2">
-        Download Planet
-      </button>
-
-      {/* Share Button */}
-      <button onClick={handleShare} className="bg-yellow-500 text-white rounded px-4 py-2">
-        Share Planet
       </button>
     </div>
   );
