@@ -26,3 +26,8 @@
     @apply h-screen bg-cover bg-center;
     background-image: url('./assets/spacebg2.jpg');
 }
+
+#lander-page {
+    @apply h-screen bg-cover bg-center;
+    background-image: url('./assets/wikibg1.jpg');
+}
