@@ -16,9 +16,6 @@ function App() {
         <Route path="/create" element={<PlanetLayerApp/>}></Route>
         <Route path="/memory" element={<MemoryCardGame/>}></Route>
         <Route path="/quiz" element={<Quiz/>}></Route>
-        <Route path='/travel' element={<PlanetTravel/>}></Route>
-        <Route path='/story' element={<StoryBoard/>}></Route>
-        <Route path='/wiki' element={<PlanetTravel/>}></Route>
       </Routes>
     </>
   )
