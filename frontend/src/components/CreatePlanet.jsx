@@ -1,41 +1,41 @@
 import React from 'react';
-import kidimage from '../assets/kidpaint.jpg'; // Ensure you have the correct path to your image
+import { Link } from 'react-router-dom';
+import kidpaint from '../assets/kidpaint.jpg';
 
 const CreatePlanet = () => {
   return (
-    <div className="relative bg-cover bg-center min-h-screen" id="create-planet">
-      {/* Container for Image and Text */}
-      <div className="flex items-center justify-between h-screen p-10">
-        
-        {/* Image Section */}
-        <div className="flex items-center justify-center mb-8">
-          <img src={kidimage} alt="Child painting the planet" className="w-full max-w-[400px] h-auto" />
+    <div id='create-planet' className="relative flex flex-col justify-center items-start bg-cover bg-center min-h-screen px-8">
+      <div className="flex flex-wrap md:flex-nowrap items-center w-full mb-6">
+        <div className="md:w-1/2 w-full flex justify-center">
+          <img
+            src={kidpaint}
+            alt="Planet"
+            className="w-3/4 h-auto object-cover"
+          />
         </div>
 
-        {/* Text and Description Section */}
-        <div className="text-right max-w-md ml-8">
-          <p className="text-lg text-purple-800 font-semibold">
-            Dive into the creation of exoplanets where you hold the key to its diversity. 
-            From the distance to the nearest star to the mass of the planet, 
-            select the features you desire and paint it out !!
-          </p>
-
-          {/* Create Button */}
-          <div className="mt-6">
-            <button className="px-6 py-3 bg-gray-300 text-black rounded-full text-lg hover:bg-gray-400 flex items-center shadow-md" aria-label="Create Planet">
-              Create 
-              <span className="ml-2">→</span>
-            </button>
+        <div className="md:w-1/2 w-full flex flex-col justify-between md:ml-8 mt-6 md:mt-0 h-full">
+          <div className="flex-1 max-w-md">
+            <p className="text-2xl md:text-5xl mb-4 leading-snug">
+              Dive into the creation of exoplanets where you hold the key to its diversity. 
+              From the distance to the nearest star to the mass of the planet, select the features you desire and paint it out !!
+            </p>
           </div>
+
+          <Link
+            to="/create"
+            className="text-white bg-blue-500 hover:bg-blue-600 px-16 py-8 rounded-lg text-xl flex items-center justify-between w-48"
+          >
+            Create <span className="ml-2">→</span>
+          </Link>
         </div>
       </div>
 
-      {/* Footer Text */}
-      <div className="absolute bottom-10 w-full text-center">
-        <h1 className="text-4xl font-bold text-indigo-800">HOLD THE BRUSH</h1>
-      </div>
+      <p className="text-left text-6xl font-bold md:ml-[6%]">
+        HOLD THE BRUSH
+      </p>
     </div>
   );
-}
+};
 
 export default CreatePlanet;
